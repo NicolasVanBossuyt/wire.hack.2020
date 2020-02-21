@@ -2,6 +2,9 @@ import * as React from 'react';
 
 import { WithStyles, createStyles, withStyles } from '@material-ui/core';
 
+import Header from '../components/Header';
+import { title } from '../constants/header';
+
 const styles = () => createStyles({});
 
 interface HomeProps extends WithStyles<typeof styles> {
@@ -13,7 +16,7 @@ class Home extends React.Component<HomeProps> {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <p>zCaptcha</p>
+        <Header title={title} />
       </div>
     );
   }
