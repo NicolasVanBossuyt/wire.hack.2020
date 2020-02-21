@@ -14,9 +14,6 @@ import theme from '../theme';
 
 const styles = () =>
   createStyles({
-    layout: {
-      /* marginBottom: theme.spacing(2), */
-    },
     root: {
       display: 'flex',
       flexDirection: 'column',
