@@ -1,0 +1,53 @@
+{
+  "name": "zCaptcha",
+  "version": "0.0.1",
+  "description": "Recaptcha to detect zombies",
+  "main": "index.js",
+  "repository": "git@github.com:NicolasVanBossuyt/wire.hack.2020.git",
+  "author": "Terencio Agozzino <terencio.agozzino@gmail.com>",
+  "license": "ISC",
+  "scripts": {
+    "build": "webpack --mode production",
+    "clean": "rimraf dist/",
+    "dev": "webpack-dev-server --mode development --open --hot --progress",
+    "lint": "tsc --noEmit && eslint 'src/**/*.{ts,tsx}' --quiet --fix"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.9.3",
+    "@material-ui/icons": "^4.9.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-html-parser": "^2.0.2",
+    "react-router-dom": "^5.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@types/history": "^4.7.5",
+    "@types/node": "^13.7.4",
+    "@types/react": "^16.9.22",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-router-dom": "^5.1.3",
+    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/parser": "^2.20.0",
+    "css-loader": "^3.4.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "file-loader": "^5.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^6.0.0",
+    "node-sass": "^4.13.1",
+    "prettier": "^1.19.1",
+    "react-hot-loader": "^4.12.19",
+    "sass": "^1.25.0",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.2",
+    "url-loader": "^3.0.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
