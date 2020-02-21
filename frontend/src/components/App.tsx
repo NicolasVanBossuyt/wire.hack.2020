@@ -3,7 +3,6 @@ import { Router } from 'react-router-dom';
 import {
   CssBaseline,
   MuiThemeProvider,
-  Theme,
   WithStyles,
   createStyles,
   withStyles,
@@ -13,10 +12,10 @@ import RouteHandler from '../routes/RouteHandler';
 import history from '../services/history';
 import theme from '../theme';
 
-const styles = (theme: Theme) =>
+const styles = () =>
   createStyles({
     layout: {
-      marginBottom: theme.spacing(2),
+      /* marginBottom: theme.spacing(2), */
     },
     root: {
       display: 'flex',

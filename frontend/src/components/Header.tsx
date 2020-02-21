@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Fade, Theme, Typography, WithStyles, createStyles, withStyles } from '@material-ui/core';
+import { Fade, Typography, WithStyles, createStyles, withStyles } from '@material-ui/core';
 import { cyan, grey } from '@material-ui/core/colors';
 
-const styles = (theme: Theme) =>
+const styles = () =>
   createStyles({
     mainTitle: {
       color: cyan[300],
@@ -16,8 +16,7 @@ const styles = (theme: Theme) =>
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      paddingTop: theme.spacing(8),
-      /* backgroundImage: 'url(' + require('../assets/img/background.jpg') + ')', */
+      backgroundImage: 'url(' + require('../assets/img/background.jpg') + ')',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
