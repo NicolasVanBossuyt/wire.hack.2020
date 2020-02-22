@@ -1,13 +1,21 @@
 import * as React from 'react';
-import { Fade, Typography, WithStyles, createStyles, withStyles } from '@material-ui/core';
-import { cyan, grey } from '@material-ui/core/colors';
+import {
+  Container,
+  Fade,
+  Typography,
+  WithStyles,
+  createStyles,
+  withStyles,
+} from '@material-ui/core';
+import { deepPurple, grey } from '@material-ui/core/colors';
+import Locker from './Locker';
 
 const styles = () =>
   createStyles({
     mainTitle: {
-      color: cyan[300],
+      color: deepPurple[900],
       fontWeight: 500,
-      textShadow: `2px 2px ${grey[700]}`,
+      textShadow: `2px 2px ${grey[300]}`,
     },
     root: {
       height: '100vh',
@@ -21,8 +29,7 @@ const styles = () =>
       backgroundSize: 'cover',
       backgroundPosition: 'center',
     },
-    secondaryTitle: {
-      width: '50%',
+    subtitle: {
       color: grey[900],
       fontWeight: 500,
       textShadow: `1px 1px ${grey[300]}`,
@@ -37,12 +44,13 @@ const styles = () =>
 
 interface HeaderProps extends WithStyles<typeof styles> {
   classes: any;
+  subtitle: JSX.Element;
   title: string;
 }
 
 class Header extends React.Component<HeaderProps> {
   render() {
-    const { classes, title } = this.props;
+    const { classes, subtitle, title } = this.props;
     return (
       <div className={classes.root}>
         <Fade in={true} timeout={1000}>
@@ -52,10 +60,16 @@ class Header extends React.Component<HeaderProps> {
               className={classes.mainTitle}
               component="h1"
               gutterBottom
-              variant="h3"
+              variant="h1"
             >
               {title}
             </Typography>
+            <Container maxWidth="md" className={classes.main}>
+              <Typography className={classes.subtitle} component="h2" variant="h2">
+                {subtitle}
+              </Typography>
+            </Container>
+            <Locker />
           </div>
         </Fade>
       </div>

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { WithStyles, createStyles, withStyles } from '@material-ui/core';
 
 import Header from '../components/Header';
-import { title } from '../constants/header';
+import { subtitle, title } from '../constants/header';
 
 const styles = () => createStyles({});
 
@@ -16,7 +16,7 @@ class Home extends React.Component<HomeProps> {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <Header title={title} />
+        <Header title={title} subtitle={subtitle} />
       </div>
     );
   }
