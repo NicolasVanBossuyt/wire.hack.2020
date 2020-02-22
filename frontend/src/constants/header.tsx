@@ -6,4 +6,4 @@ export const subtitle = (
     <strong style={{ color: pink[700] }}>You're not alone!</strong>{' '}
   </div>
 );
-export const title = 'INABEB';
+export const title = 'ZCAPTCHA';

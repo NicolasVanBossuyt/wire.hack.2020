@@ -3,11 +3,11 @@
 }
 
 .slider {
-    -webkit-appearance: none;
-    width: 320px;
-    background: #d3d3d3;
-    outline: none;
-    border-radius: 20px;
+  -webkit-appearance: none;
+  width: 320px;
+  background: #d3d3d3;
+  outline: none;
+  border-radius: 20px;
 }
 
 .slider::-webkit-slider-thumb {
@@ -17,7 +17,7 @@
   height: 32px;
   margin: 4px;
   border-radius: 16px;
-  background: black;
+  background: #009688;
   border: solid 2px rgba(255, 255, 255, 0.5);
   cursor: pointer;
 }
@@ -31,8 +31,9 @@
 }
 
 .question {
-    font-size: 16pt;
-    padding-bottom: 8px;
+  padding-left: 0.5em;
+  font-size: 16pt;
+  padding-bottom: 8px;
 }
 
 .instruction {
@@ -47,25 +48,30 @@
 }
 
 .validating {
-    color: rgb(255, 153, 0);
-    text-align: center;
-    width: 324px;
-    height: 130px;
-    height: 100%;
-    line-height: 130px;
-    font-size: 32pt;
-    vertical-align: middle;
+  color: rgb(0,150,136);
+  text-align: center;
+  width: 324px;
+  height: 130px;
+  height: 100%;
+  line-height: 130px;
+  font-size: 32pt;
+  vertical-align: middle;
+  display: inline;
+}
+
+.validatingText {
+  display: inline;
 }
 
 .validated {
-    color: #4CAF50;
-    text-align: center;
-    width: 324px;
-    height: 130px;
-    height: 100%;
-    line-height: 130px;
-    font-size: 32pt;
-    vertical-align: middle;
+  color: #4CAF50;
+  text-align: center;
+  width: 324px;
+  height: 130px;
+  height: 100%;
+  line-height: 130px;
+  font-size: 32pt;
+  vertical-align: middle;
 }
 
 .failed {

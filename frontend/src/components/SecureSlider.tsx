@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './SecureSlider.scss';
+import CircularDeterminate from './CircularDeterminate';
 import { Typography } from '@material-ui/core';
 
 interface IProps { }
@@ -92,19 +93,28 @@ class SecureSlider extends React.Component<IProps, IState> {
     let content;
 
     if (this.state.validated) {
-      content = <div className="validated">Looking good 😉</div>;
+      /* content = <div className="validated">Looking good 😉</div>; */ 1;
       setTimeout(function() {
         window.location.href = 'http://localhost:8080/chat';
       }, 3000);
     } else if (this.state.failed) {
       content = <div className="failed">Sad, you are a zombie 🧟</div>;
     } else if (this.state.validating) {
-      content = <div className="validating">Validating...</div>;
+      content = (
+        <div className="validating">
+          <CircularDeterminate />
+        </div>
+      );
     } else {
       content = (
         <div>
           <div className="question">
-            <Typography>I’m not a brain eating bastard?</Typography>
+            <Typography variant="h6">
+              <strong className="rah">Raaaaaah</strong>, I'm not a zombie!
+            </Typography>
+            <Typography className="prove" component="p">
+              Slide to prove it 😊
+            </Typography>
             <input
               type="range"
               onMouseMove={this.handleMouseMove.bind(this)}
@@ -115,7 +125,7 @@ class SecureSlider extends React.Component<IProps, IState> {
               className="slider"
               id="myRange"
             />
-            <div className="powered">powered by INABEB</div>
+            <div className="powered">powered by zCaptcha</div>
           </div>
         </div>
       );
