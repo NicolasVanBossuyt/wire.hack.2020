@@ -16,7 +16,7 @@ Glisser un bouton de droite à gauche!
 Le zombie, prit de tremblement par ces soucis de nécrose de la peau, sera prit de base de tremblement, et n'arrivera pas à faire glisser le bouton d'un point A à un point B sans toucher les bords
 
 Reconnaissances des couleurs
-Avec un petit quiz de couleur, le zombien, dont la vue s'est déteriorée par cette nécrose qui l'accapble, aura une moins bonne perception visuelle, et donc, également de la couleur, ne lui permettant pas de pouvoir dire avec certitudes , la couleur de tel ou tel élèment, ou de joindre ensemble des sets colorés
+Avec un petit quiz de couleur, le zombie, dont la vue s'est déteriorée par cette nécrose qui l'accapble, aura une moins bonne perception visuelle, et donc, également de la couleur, ne lui permettant pas de pouvoir dire avec certitudes , la couleur de tel ou tel élèment, ou de joindre ensemble des sets colorés
 
 
 
@@ -30,3 +30,5 @@ La photo sera réutilisée dans une banques de données, afin que son visage pui
 Pourquoi un Re:Captcha?
 
 Tous simplement car c'est l'outil par excellence qui s'additionne à toutes formes d'applications, que ce soit un site, une appli mobile, une connexion internet, tous peuvent être jumelé avec un Re:Captcha afin que celui ci teste la dextéritée de nos chères amis les zombies, et de les faire tomber dans un piège, receuillant leurs données visuelles.
+
+De plus avec celui-ci, il permettra non seulement d'obtenir une liste des zombies ayant tenté d'accéder à l'application, mais également d'avoir leurs positions, et donc, d'avertir non seulement les utilisateurs proches non contaminé, mais aussi de pouvoir suivre ceux ci en interne via la base de données.
