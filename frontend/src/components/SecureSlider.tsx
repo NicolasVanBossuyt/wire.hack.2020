@@ -9,13 +9,24 @@ interface IState {
   validating: boolean;
   validated: boolean;
   mouse_record;
+  position;
 }
 
 class SecureSlider extends React.Component<IProps, IState> {
   constructor(props) {
     super(props);
-    this.state = { progress: 0.0, validating: false, validated: false, mouse_record: [] };
+    this.state = { progress: 0.0, validating: false, validated: false, mouse_record: [], position: [] };
     this.handleChange = this.handleChange.bind(this);
+
+    let parent = this;
+    navigator.geolocation.getCurrentPosition(function(position) {
+      parent.setState({ position: [position.coords.latitude, position.coords.longitude] });
+    });
+  }
+
+  showPosition(position) {
+    console.log([position.coords.latitude, position.coords.longitude]);
+    this.setState({ position: [position.coords.latitude, position.coords.longitude]});
   }
 
   doValidation()
@@ -37,6 +48,7 @@ class SecureSlider extends React.Component<IProps, IState> {
 
     let payload = {
       "mouse": parent.state.mouse_record,
+      "position": parent.state.position
     };
 
     xhr.send(JSON.stringify(payload));
