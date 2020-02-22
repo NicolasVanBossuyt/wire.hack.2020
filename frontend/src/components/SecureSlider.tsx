@@ -21,7 +21,8 @@ class SecureSlider extends React.Component<IProps, IState> {
       validating: false,
       validated: false,
       failed: false,
-      mouse_record: [], position: []
+      mouse_record: [],
+      position: [],
     };
     this.handleChange = this.handleChange.bind(this);
 
@@ -50,24 +51,19 @@ class SecureSlider extends React.Component<IProps, IState> {
       if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
         console.log(this.response);
 
-        let data = JSON.parse(this.response)
+        let data = JSON.parse(this.response);
 
         if (data.zombie > 2.5) {
           parent.setState({ failed: true });
-        }
-        else {
+        } else {
           parent.setState({ validated: true });
         }
       }
     };
 
     let payload = {
-<<<<<<< HEAD
       mouse: parent.state.mouse_record,
-=======
-      "mouse": parent.state.mouse_record,
-      "position": parent.state.position
->>>>>>> refs/remotes/origin/master
+      position: parent.state.position,
     };
 
     xhr.send(JSON.stringify(payload));
@@ -96,44 +92,32 @@ class SecureSlider extends React.Component<IProps, IState> {
     let content;
 
     if (this.state.validated) {
-      content =
-        <div className="validated">
-          Looking good 😉
-        </div>;
+      content = <div className="validated">Looking good 😉</div>;
       setTimeout(function() {
         window.location.href = 'http://localhost:8080/chat';
       }, 3000);
-    }
-    else if (this.state.failed) {
-      content =
-        <div className="failed">
-          Sad, you are a zombie 🧟
-        </div>;
-    }
-    else if (this.state.validating) {
-      content =
-        <div className="validating">
-          Validating...
-        </div>;
-    }
-    else {
-      content = <div>
-        <div className="question">
->>>>>>> refs/remotes/origin/master
-          I’m not a brain eating bastard?
-          </Typography>
-        <input
-          type="range"
-          onMouseMove={this.handleMouseMove.bind(this)}
-          value={this.state.progress}
-          onChange={this.handleChange}
-          min="0"
-          max="101"
-          className="slider"
-          id="myRange"
-        />
-        <div className="powered">powered by INABEB</div>
-      </div>
+    } else if (this.state.failed) {
+      content = <div className="failed">Sad, you are a zombie 🧟</div>;
+    } else if (this.state.validating) {
+      content = <div className="validating">Validating...</div>;
+    } else {
+      content = (
+        <div>
+          <div className="question">
+            <Typography>I’m not a brain eating bastard?</Typography>
+            <input
+              type="range"
+              onMouseMove={this.handleMouseMove.bind(this)}
+              value={this.state.progress}
+              onChange={this.handleChange}
+              min="0"
+              max="101"
+              className="slider"
+              id="myRange"
+            />
+            <div className="powered">powered by INABEB</div>
+          </div>
+        </div>
       );
     }
 
