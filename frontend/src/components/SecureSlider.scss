@@ -5,12 +5,10 @@
 .slider {
     -webkit-appearance: none;
     width: 320px;
-    height: 32px;
     background: #d3d3d3;
     outline: none;
     border-radius: 8px;
 }
-
 
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -19,6 +17,7 @@
     height: 26px;
     border-radius: 8px;
     background: #4CAF50;
+    border: solid 2px rgba(255, 255, 255, 0.5);
     cursor: pointer;
 }
 
@@ -27,4 +26,27 @@
     height: 25px;
     background: #4CAF50;
     cursor: pointer;
+}
+
+.wrapper{
+    padding: 8px 19px;
+    background-color: white;
+    border-radius: 8px;
+    border: solid 2px rgba(0, 0, 0, 0.5);
+}
+
+.question {
+    font-size: 16pt;
+    padding-bottom: 8px;
+}
+
+.instruction {
+    text-align: center;
+    padding-bottom: 8px;
+}
+
+.powered{
+    width: 100%;
+    text-align: right;
+    font-size: 8pt;
 }
