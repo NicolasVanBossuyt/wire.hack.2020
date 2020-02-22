@@ -9,7 +9,7 @@ export default class RouteHandler extends React.Component {
     return (
       <Switch>
         <Route path="/" exact component={HomePage} />
-        <Route path="/news" component={NewsPage} />
+        <Route path="/chat" component={NewsPage} />
       </Switch>
     );
   }
