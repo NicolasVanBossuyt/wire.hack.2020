@@ -2,20 +2,26 @@ import * as React from 'react';
 import {
   Container,
   Fade,
+  Theme,
   Typography,
   WithStyles,
   createStyles,
   withStyles,
 } from '@material-ui/core';
-import { deepPurple, grey } from '@material-ui/core/colors';
+import { pink, grey } from '@material-ui/core/colors';
 import SecureSlider from './SecureSlider';
 
-const styles = () =>
+const styles = (theme: Theme) =>
   createStyles({
     mainTitle: {
-      color: deepPurple[900],
-      fontWeight: 500,
-      textShadow: `2px 2px ${grey[300]}`,
+      color: '#f2f2f2',
+      background: pink[500],
+      fontSize: '75px',
+      lineHeight: '74px',
+      fontWeight: 700,
+      margin: '0 5px 24px',
+      float: 'left',
+      padding: '10px',
     },
     root: {
       height: '100vh',
@@ -31,8 +37,8 @@ const styles = () =>
     },
     subtitle: {
       color: grey[900],
+      marginBottom: theme.spacing(8),
       fontWeight: 500,
-      textShadow: `1px 1px ${grey[300]}`,
     },
     teaser: {
       display: 'flex',
@@ -53,7 +59,7 @@ class Header extends React.Component<HeaderProps> {
     const { classes, subtitle, title } = this.props;
     return (
       <div className={classes.root}>
-        <Fade in={true} timeout={1000}>
+        <Fade in={true} timeout={3000}>
           <div className={classes.teaser}>
             <Typography
               align="center"

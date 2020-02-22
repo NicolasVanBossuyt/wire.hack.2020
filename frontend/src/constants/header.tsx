@@ -1,9 +1,9 @@
 import * as React from 'react';
-import red from '@material-ui/core/colors/red';
+import pink from '@material-ui/core/colors/pink';
 
 export const subtitle = (
   <div>
-    <strong style={{ color: red[500] }}>You're not alone!</strong>{' '}
+    <strong style={{ color: pink[700] }}>You're not alone!</strong>{' '}
   </div>
 );
 export const title = 'INABEB';
