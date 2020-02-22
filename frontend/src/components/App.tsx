@@ -62,7 +62,6 @@ class App extends React.Component<AppProps> {
     };
 
     id = navigator.geolocation.watchPosition(success, error, options);
-    console.log('OPTIONS');
   }
 
   render() {
