@@ -22,7 +22,6 @@ def validate_mouse_data(mouse_data):
 
 
 def validate_position(position):
-
     match_count = 0
     for other_position in db:
         if vincenty(position, (other_position['0'], other_position['1'])).km <= 2.5:
@@ -69,6 +68,18 @@ def validate():
             "position": position_score,
 
             "zombie": zombie_chance
+        }))
+
+
+@app.route('/risk', methods=['POST', 'OPTIONS'])
+def risk():
+    if request.method == 'OPTIONS':
+        return _build_cors_prelight_response()
+    elif request.method == 'POST':
+        risk = validate_position(request.json['position'])
+
+        return corsify(jsonify({
+            "risk": risk,
         }))
 
 
