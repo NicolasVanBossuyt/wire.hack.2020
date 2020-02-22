@@ -9,7 +9,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "clean": "rimraf dist/",
-    "dev": "webpack-dev-server --mode development --open --hot --progress",
+    "dev": "set HTTPS=true&&webpack-dev-server --mode development --open --hot --progress",
     "lint": "tsc --noEmit && eslint 'src/**/*.{ts,tsx}' --quiet --fix"
   },
   "dependencies": {

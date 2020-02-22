@@ -26,6 +26,45 @@ interface AppProps extends WithStyles<typeof styles> {
 }
 
 class App extends React.Component<AppProps> {
+  state = {
+    initLat: 42.39,
+    initLng: -72.52,
+    currentCords: null,
+    isNewPointDialogOpen: false,
+  };
+
+  componentDidMount() {
+    var id, target, options;
+
+    function success(pos) {
+      console.log('SUCCESS');
+      var crd = pos.coords;
+
+      if (target.latitude === crd.latitude && target.longitude === crd.longitude) {
+        console.log('Congratulations, you reached the target');
+        navigator.geolocation.clearWatch(id);
+      }
+    }
+
+    function error(err) {
+      console.warn('ERROR(' + err.code + '): ' + err.message);
+    }
+
+    target = {
+      latitude: 0,
+      longitude: 0,
+    };
+
+    options = {
+      enableHighAccuracy: false,
+      timeout: 5000,
+      maximumAge: 0,
+    };
+
+    id = navigator.geolocation.watchPosition(success, error, options);
+    console.log('OPTIONS');
+  }
+
   render() {
     const { classes } = this.props;
     return (
