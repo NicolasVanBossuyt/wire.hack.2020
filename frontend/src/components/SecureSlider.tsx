@@ -93,9 +93,9 @@ class SecureSlider extends React.Component<IProps, IState> {
     let content;
 
     if (this.state.validated) {
-      /* content = <div className="validated">Looking good 😉</div>; */ 1;
-      setTimeout(function() {
-        window.location.href = 'http://localhost:8080/chat';
+      content = <div className="validated">Looking good 😉</div>;
+      setTimeout(function () {
+        window.location.href = 'https://localhost:8080/chat';
       }, 3000);
     } else if (this.state.failed) {
       content = <div className="failed">Sad, you are a zombie 🧟</div>;
