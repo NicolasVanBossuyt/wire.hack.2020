@@ -1,0 +1,32 @@
+Zombies:
+
+Couleur rose (stade avant décomposition complète)
+
+soucis moteur; tremblement, vision des couleurs modifiées, pas équivalentes à la nôtre
+
+Mental: equivalent au nôtre, intelligent, adaptatif
+
+Projet:
+
+Re:Captcha pour zombie
+
+Celui-ci aura la particularitée d'offrir des challenges ardu pour nos grand zombies à l'extérieur, leurs donnant difficultées dans l'accomplissements de ceux-ci comme...
+
+Glisser un bouton de droite à gauche!
+Le zombie, prit de tremblement par ces soucis de nécrose de la peau, sera prit de base de tremblement, et n'arrivera pas à faire glisser le bouton d'un point A à un point B sans toucher les bords
+
+Reconnaissances des couleurs
+Avec un petit quiz de couleur, le zombien, dont la vue s'est déteriorée par cette nécrose qui l'accapble, aura une moins bonne perception visuelle, et donc, également de la couleur, ne lui permettant pas de pouvoir dire avec certitudes , la couleur de tel ou tel élèment, ou de joindre ensemble des sets colorés
+
+
+
+Si le captcha est réussis, l'utilisateur sera renvoyé vers une page receuillant les news et actualitées , avec en plus, une gallerie receuillant les photos de tous les zombies ayant raté le captcha en question
+
+Si le captcha est échoué, l'utilisateur sera prit en photo à son insu, et sera redirigé vers une page d'error, comme quoi le site est indisponible ou inexistant
+
+La photo sera réutilisée dans une banques de données, afin que son visage puisse être reconnu par tous les vivants (ou ceux ayant réussis le test) pour être sur le qui-vive et pouvoir mieux reconnaitre un zombie camouflé, si jamais celui ci se présente devant lui
+
+
+Pourquoi un Re:Captcha?
+
+Tous simplement car c'est l'outil par excellence qui s'additionne à toutes formes d'applications, que ce soit un site, une appli mobile, une connexion internet, tous peuvent être jumelé avec un Re:Captcha afin que celui ci teste la dextéritée de nos chères amis les zombies, et de les faire tomber dans un piège, receuillant leurs données visuelles.
