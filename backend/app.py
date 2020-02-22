@@ -14,7 +14,7 @@ def variance_data(dataset):
     for data in dataset:
         total += (data - mean) ** 2
 
-    return (total / len(dataset))
+    return ((total / len(dataset))) / (mean ** 2)
 
 
 def validate_mouse_data(mouse_data):
@@ -34,7 +34,7 @@ def validate_position(position):
         if vincenty(position, (other_position['0'], other_position['1'])).km <= 2.5:
             match_count += 1
 
-    return min(match_count, 10) / 10
+    return min(match_count, 10) / 5
 
 
 def corsify(response):

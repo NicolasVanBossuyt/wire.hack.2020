@@ -8,6 +8,7 @@ interface IState {
   progress: number;
   validating: boolean;
   validated: boolean;
+  failed: boolean;
   mouse_record;
   position;
 }
@@ -15,7 +16,13 @@ interface IState {
 class SecureSlider extends React.Component<IProps, IState> {
   constructor(props) {
     super(props);
-    this.state = { progress: 0.0, validating: false, validated: false, mouse_record: [], position: [] };
+    this.state = {
+      progress: 0.0,
+      validating: false,
+      validated: false,
+      failed: false,
+      mouse_record: [], position: []
+    };
     this.handleChange = this.handleChange.bind(this);
 
     let parent = this;
@@ -41,8 +48,17 @@ class SecureSlider extends React.Component<IProps, IState> {
 
     xhr.onreadystatechange = function () { //Appelle une fonction au changement d'état.
       if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-        parent.setState({ validated: true });
         console.log(this.response);
+
+        let data = JSON.parse(this.response)
+
+        if (data.zombie > 2.5) {
+          parent.setState({ failed: true });
+        }
+        else
+        {
+          parent.setState({ validated: true });
+        }
       }
     }
 
@@ -79,7 +95,14 @@ class SecureSlider extends React.Component<IProps, IState> {
     if (this.state.validated) {
       content =
         <div className="validated">
-          Looking good!
+          Looking good 😉
+        </div>;
+    }
+    else if (this.state.failed)
+    {
+      content =
+        <div className="failed">
+          Sad, you are a zombie 🧟
         </div>;
     }
     else if (this.state.validating)
