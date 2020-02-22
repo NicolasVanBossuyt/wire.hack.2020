@@ -1,8 +1,8 @@
 import * as React from 'react';
 import './SecureSlider.scss';
+import { Typography } from '@material-ui/core';
 
-interface IProps {
-}
+interface IProps { }
 
 interface IState {
   progress: number;
@@ -33,20 +33,20 @@ class SecureSlider extends React.Component<IProps, IState> {
 
   showPosition(position) {
     console.log([position.coords.latitude, position.coords.longitude]);
-    this.setState({ position: [position.coords.latitude, position.coords.longitude]});
+    this.setState({ position: [position.coords.latitude, position.coords.longitude] });
   }
 
-  doValidation()
-  {
+  doValidation() {
     let parent = this;
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", 'http://127.0.0.1:5000/validate', true);
+    xhr.open('POST', 'http://127.0.0.1:5000/validate', true);
 
     //Envoie les informations du header adaptées avec la requête
-    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.setRequestHeader('Content-Type', 'application/json');
 
-    xhr.onreadystatechange = function () { //Appelle une fonction au changement d'état.
+    xhr.onreadystatechange = function() {
+      //Appelle une fonction au changement d'état.
       if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
         console.log(this.response);
 
@@ -55,38 +55,41 @@ class SecureSlider extends React.Component<IProps, IState> {
         if (data.zombie > 2.5) {
           parent.setState({ failed: true });
         }
-        else
-        {
+        else {
           parent.setState({ validated: true });
         }
       }
-    }
+    };
 
     let payload = {
+<<<<<<< HEAD
+      mouse: parent.state.mouse_record,
+=======
       "mouse": parent.state.mouse_record,
       "position": parent.state.position
+>>>>>>> refs/remotes/origin/master
     };
 
     xhr.send(JSON.stringify(payload));
   }
 
-  handleChange(event)
-  {
-    if (parseInt(event.target.value) >= this.state.progress)
-    {
+  handleChange(event) {
+    if (parseInt(event.target.value) >= this.state.progress) {
       this.setState({ progress: parseInt(event.target.value) });
     }
 
-    if (this.state.progress >= 98)
-    {
+    if (this.state.progress >= 98) {
       this.setState({ validating: true });
       this.doValidation();
     }
   }
 
-  handleMouseMove(event)
-  {
-    this.setState({ mouse_record: this.state.mouse_record.concat([[event.nativeEvent.offsetX, event.nativeEvent.offsetY]]) });
+  handleMouseMove(event) {
+    this.setState({
+      mouse_record: this.state.mouse_record.concat([
+        [event.nativeEvent.offsetX, event.nativeEvent.offsetY],
+      ]),
+    });
   }
 
   render() {
@@ -97,42 +100,44 @@ class SecureSlider extends React.Component<IProps, IState> {
         <div className="validated">
           Looking good 😉
         </div>;
+      setTimeout(function() {
+        window.location.href = 'http://localhost:8080/chat';
+      }, 3000);
     }
-    else if (this.state.failed)
-    {
+    else if (this.state.failed) {
       content =
         <div className="failed">
           Sad, you are a zombie 🧟
         </div>;
     }
-    else if (this.state.validating)
-    {
+    else if (this.state.validating) {
       content =
         <div className="validating">
           Validating...
         </div>;
     }
-    else
-    {
-      content =<div>
-          <div className="question">
-            I’m not a brain eating bastard?
-          </div>
-          <div className="instruction">
-            Slide to prove it!
-          </div>
-        <input type="range" onMouseMove={this.handleMouseMove.bind(this)} value={this.state.progress} onChange={this.handleChange} min="0" max="101" className="slider" id="myRange" />
-          <div className="powered">
-            powered by INABEB
-          </div>
-        </div>;
-     }
-
-    return (
-      <div className="wrapper">
-        {content}
+    else {
+      content = <div>
+        <div className="question">
+>>>>>>> refs/remotes/origin/master
+          I’m not a brain eating bastard?
+          </Typography>
+        <input
+          type="range"
+          onMouseMove={this.handleMouseMove.bind(this)}
+          value={this.state.progress}
+          onChange={this.handleChange}
+          min="0"
+          max="101"
+          className="slider"
+          id="myRange"
+        />
+        <div className="powered">powered by INABEB</div>
       </div>
-    );
+      );
+    }
+
+    return <div className="wrapper">{content}</div>;
   }
 }
 

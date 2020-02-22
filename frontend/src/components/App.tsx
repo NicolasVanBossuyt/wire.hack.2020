@@ -33,8 +33,6 @@ class App extends React.Component<AppProps> {
     isNewPointDialogOpen: false,
   };
 
-  componentDidMount() { }
-
   render() {
     const { classes } = this.props;
     return (

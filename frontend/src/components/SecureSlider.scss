@@ -1,5 +1,5 @@
 .slidecontainer {
-    width: 100%;
+  width: 100%;
 }
 
 .slider {
@@ -11,6 +11,16 @@
 }
 
 .slider::-webkit-slider-thumb {
+<<<<<<< HEAD
+  -webkit-appearance: none;
+  appearance: none;
+  width:  64px;
+  height: 26px;
+  border-radius: 8px;
+  background: #4CAF50;
+  border: solid 2px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+=======
     -webkit-appearance: none;
     appearance: none;
     width:  32px;
@@ -20,6 +30,7 @@
     background: black;
     border: solid 2px rgba(255, 255, 255, 0.5);
     cursor: pointer;
+>>>>>>> refs/remotes/origin/master
 }
 
 .wrapper{
