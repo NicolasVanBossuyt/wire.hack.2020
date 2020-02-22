@@ -8,7 +8,7 @@ import {
   withStyles,
 } from '@material-ui/core';
 import { deepPurple, grey } from '@material-ui/core/colors';
-import Locker from './Locker';
+import SecureSlider from './SecureSlider';
 
 const styles = () =>
   createStyles({
@@ -69,7 +69,7 @@ class Header extends React.Component<HeaderProps> {
                 {subtitle}
               </Typography>
             </Container>
-            <Locker />
+            <SecureSlider />
           </div>
         </Fade>
       </div>
