@@ -21,12 +21,6 @@ def validate_mouse_data(mouse_data):
     return variance_data([y[1] for y in mouse_data])
 
 
-def validate_gyroscope(gyroscope_data):
-    return variance_data([x[0] for x in gyroscope_data]) + \
-        variance_data([y[1] for y in gyroscope_data]) + \
-        variance_data([z[2] for z in gyroscope_data])
-
-
 def validate_position(position):
 
     match_count = 0
@@ -34,7 +28,7 @@ def validate_position(position):
         if vincenty(position, (other_position['0'], other_position['1'])).km <= 2.5:
             match_count += 1
 
-    return min(match_count, 10) / 5
+    return min(match_count, 15) / 5
 
 
 def corsify(response):
@@ -59,15 +53,11 @@ def validate():
 
         mouse_score = validate_mouse_data(request.json['mouse'])
 
-        gyroscope_score = 1
-        if "gyroscope" in request.json:
-            gyroscope_score = validate_gyroscope(request.json['gyroscope'])
-
         position_score = 1
         if "position" in request.json:
             position_score = validate_position(request.json['position'])
 
-        zombie_chance = mouse_score + gyroscope_score + position_score
+        zombie_chance = mouse_score + position_score
 
         if (zombie_chance > 2.5):
             print("ZOMBIE at ", request.json['position'])
@@ -76,7 +66,6 @@ def validate():
 
         return corsify(jsonify({
             "mouse": mouse_score,
-            "gyroscope": gyroscope_score,
             "position": position_score,
 
             "zombie": zombie_chance
