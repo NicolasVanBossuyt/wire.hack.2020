@@ -6,12 +6,13 @@ interface IProps {
 
 interface IState {
   progress: number;
+  validated: boolean;
 }
 
 class SecureSlider extends React.Component<IProps, IState> {
   constructor(props) {
     super(props);
-    this.state = { progress: 0.0 };
+    this.state = { progress: 0.0, validated: false };
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -21,21 +22,41 @@ class SecureSlider extends React.Component<IProps, IState> {
     {
       this.setState({ progress: event.target.value });
     }
+
+    if (this.state.progress >= 100)
+    {
+      this.setState({ validated: true });
+    }
   }
 
   render() {
+    let content;
+
+    if (this.state.validated) {
+      content =
+        <div className="validated">
+          Looking good!
+        </div>;
+    }
+    else
+    {
+      content =<div>
+          <div className="question">
+            I’m not a brain eating bastard?
+          </div>
+          <div className="instruction">
+            Slide to prove it!
+          </div>
+          <input type="range" value={this.state.progress} onChange={this.handleChange} min="0" max="101" className="slider" id="myRange" />
+          <div className="powered">
+            powered by INABEB
+          </div>
+        </div>;
+     }
+
     return (
       <div className="wrapper">
-        <div className="question">
-          I’m not a brain eating bastard?
-        </div>
-        <div className="instruction">
-          Slide to prove it!
-        </div>
-        <input type="range" value={this.state.progress} onChange={this.handleChange} min="0" max="100" className="slider" id="myRange" />
-        <div className="powered">
-          powered by INABEB
-        </div>
+        {content}
       </div>
     );
   }

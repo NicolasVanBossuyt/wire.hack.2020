@@ -29,6 +29,7 @@
 }
 
 .wrapper{
+    position: relative;
     padding: 8px 19px;
     background-color: white;
     border-radius: 8px;
@@ -49,4 +50,15 @@
     width: 100%;
     text-align: right;
     font-size: 8pt;
+}
+
+.validated {
+    color: #4CAF50;
+    text-align: center;
+    width: 324px;
+    height: 130px;
+    height: 100%;
+    line-height: 130px;
+    font-size: 32pt;
+    vertical-align: middle;
 }
